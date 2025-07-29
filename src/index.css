@@ -1,0 +1,762 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    background-color: #121212;
+}
+
+a{
+    text-decoration: none;
+    color: #fdb94a;
+}
+
+
+li{
+    list-style-type: none;
+}
+
+
+/*NAV*/
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1260px;
+    margin: 0 auto;
+    height: 120px;
+    padding: 0 20px;
+    z-index: 1;
+    position: fixed;
+    transition: background-color 600ms ease;
+}
+
+.nav-dark{
+    background: #141414;
+}
+
+/* nav{
+    width: 100%;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    font-size: 14px;
+    color: #e5e5e5;
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.7), 10%, transparent);
+    z-index: 1;
+    transition: background-color 600ms ease;
+} */
+
+.nav__logo{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+}
+
+.nav__logo--img{
+    width: 100px;
+    height: 100px;
+}
+
+.nav__logo--name{
+    font-family: "Chewy", system-ui;
+    color: #fdb94a;
+    font-size: 30px;
+}
+
+
+.nav__link{
+    margin-right: 32px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.nav__link.active {
+  color: white !important;
+  position: relative;
+}
+
+.nav__link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+}
+
+
+
+.nav__link--contact{
+    color:#121212;
+    background-color: #fdb94a;
+    padding: 10px 32px;
+    border-radius: 50px;
+    transition: all 300ms ease;
+}
+
+.nav__link--contact:hover{
+    background-color: #eb9b1b;
+    cursor: not-allowed;
+}
+
+.link__hover-effect{
+    position: relative;
+}
+
+.link__hover-effect:after{
+    content:"";
+    position: absolute;
+    bottom: -3px;
+    height: 3px;
+    width: 0;
+    right: 0;
+    transition: all 300ms ease;
+}
+
+.link__hover-effect--yellow:after{
+    background-color: #fdb94a;
+}
+
+.link__hover-effect:hover:after{
+    left: 0;
+    width: 100%;/*We want to give a width only when its hovering*/
+}
+
+.btn__menu{
+    background-color: transparent;
+    font-size: 40px;
+    text-align: center;
+    border: none;
+    color: #fdb94a;
+    display: none;
+}
+
+.menu__backdrop{
+    position: absolute;
+    background-color: #242424;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu--open .menu__backdrop{
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu--open{ /*When you open the menu it should not scroll down*/
+    max-height: 100vh;
+    overflow-y: hidden;
+}
+
+.btn__menu--close{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    padding: 8px;
+    color: white;
+}
+
+.menu__links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__list{
+    padding: 32px 0;
+}
+
+.menu__link{
+    font-size: 34px;
+}
+
+.fa-bars, .fa-xmark{
+    cursor: pointer;
+}
+
+
+/*HEADER*/
+
+/* .home__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 18px;
+} */
+
+.home__header {
+  padding-top: 128px;
+  min-height: calc(100vh - 128px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.header__title {
+    color: #fdb94a;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.header__sub-title {
+    color: #ddd;
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+
+.browse__button {
+    background-color: #fdb94a;
+    color: #121212;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 300ms ease, transform 150ms ease;
+}
+
+.browse__button:hover {
+    background-color: #eb9b1b;
+    transform: translateY(-2px);
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.header__img {
+    display: block;
+    max-width: 380px;
+} 
+
+
+/*SEARCH HTML*/
+
+#search__header {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(30, 30, 30, 0.95)),
+              url('./assets/cinemaPoster.jpg') center/cover no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  /* z-index: 0; */
+  padding-top: 128px;
+}
+
+
+.browse__movies {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 60px;
+  padding: 0 24px 60px;
+  text-align: center;
+  z-index: 2;
+}
+
+
+
+.header__search--title{
+    color: #fdb94a;
+    margin-bottom: 16px;
+    font-size: 38px;
+    letter-spacing: 1.5px;
+}
+
+.input-wrapper {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    border-radius: 50px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+
+input {
+    color: rgba(0, 0, 0, 0.87);
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    padding-left: 40px;
+    border: none;
+    outline: none;
+}
+
+.search-button {
+    position: absolute;
+    cursor: pointer;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 10000;
+    padding: 0px 20px 0px 8px;
+    color: #fdb94a;
+    font-size: 32px;
+    transition: 0.2s;
+    background-color: white;
+    border: none;
+}
+
+
+/*Results section*/
+
+.container{
+    padding: 56px 0;
+}
+
+.row{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+#films__main{
+    flex: 1;
+    min-height: 100vh;
+}
+
+.search__row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.search-results{
+    color: #fdb94a;
+} 
+
+select {
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #dcdfe6;
+    color: #606266;
+    height: 40px;
+    line-height: 40px;
+    outline: none;
+    padding: 0 16px;
+    width: 100%;
+    max-width: 200px;
+}
+
+.films__loading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+  font-size: 60px;
+  color: #fdb94a;
+}
+
+.films__loading--spinner {
+  animation: rotate 1.5s infinite linear;
+}
+
+.films__loading .films__loading--spinner{
+    display: block !important;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+/*FILMS*/
+
+.films{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.film{
+    width: 25%;
+    padding: 30px;
+    /* Added after tutorial to push all the books images down */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+.film__img{
+    max-height: 340px;
+    padding: 0;
+    transition: all 300ms ease;
+    cursor: pointer;
+    /* Added after tutorial to maintain image aspect ratio */
+    object-fit: contain;
+    object-position: left;
+}
+
+.film__img--wrapper{
+    height: 100%;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+}
+
+.film:hover .film__img{
+    transform: scale(1.03);
+}
+
+.film__title{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: #fdb94a;
+}
+
+.film__title:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.film__year, .film__type {
+  color: #ddd;
+}
+
+.film__type{
+    font-size: 14px;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 2px 6px 2px 4px;
+    text-decoration: none;
+    margin-left: 8px;
+}
+
+.film__img--skeleton {
+  width: 100%;
+  max-width: 250px;
+  height: 320px;
+  background-color: rgb(204, 204, 204);
+  margin-bottom: 8px;
+}
+
+.skeleton {
+  background-color: rgb(227, 227, 227) !important;
+  margin-bottom: 8px;
+}
+
+.film__title--skeleton {
+  height: 21px;
+  width: 100%;
+  max-width: 250px;
+}
+
+
+
+/* Skeleton */
+
+.skeleton-film {
+  width: 180px;
+  margin: 0.5rem;
+}
+
+.skeleton-img,
+.skeleton-title,
+.skeleton-meta {
+  background: #333;
+  border-radius: 6px;
+}
+
+.skeleton-img {
+  height: 270px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.skeleton-title {
+  height: 20px;
+  width: 80%;
+  margin-bottom: 8px;
+}
+
+.skeleton-meta {
+  height: 14px;
+  width: 60%;
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(51, 51, 51, 0.2) 25%,
+    rgba(102, 102, 102, 0.2) 50%,
+    rgba(51, 51, 51, 0.2) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+
+/*Film Info*/
+
+.film-info-page {
+  background-color: #0f0f0f;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.film-info-container {
+  max-width: 1022px;
+  margin: 0 auto;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  color: #ffcb3c;
+  font-weight: 600;
+  transition: text-decoration 0.3s ease;
+}
+
+.back-button:hover {
+  text-decoration: underline
+}
+
+.back-button img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.2s ease;
+}
+
+.back-button img:hover {
+  transform: scale(1.1);
+}
+
+.back-button span {
+  font-size: 1.1rem;
+}
+
+.film-detail {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.film-poster {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.film__description {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 600px;
+}
+
+.film__description h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.film__description p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.film__description strong {
+  color: #ffcb3c;
+  font-weight: 600;
+}
+
+.film-overview {
+  margin-top: 1rem;
+}
+
+.loading {
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+  padding-top: 5rem;
+}
+
+.play-btn {
+    max-width: 200px;
+    width: 100%;
+  margin-top: 24px;              
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;                       
+  background-color:  #ffcb3c;
+  color: #121212;
+  font-weight: 600;
+  padding: 10px 8px;   
+  border-radius: 5px;
+  font-size: 16px;          
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.play-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.play-btn:hover {
+  transform: scale(1.05);
+}
+
+
+
+.player{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player img{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.player iframe{
+    border-radius: 10px;
+}
+
+.player-info{
+    color: white;
+    margin-top: 6px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+@media (max-width: 1024px){
+
+    .film{
+        width: calc(100%/3);
+    }
+}
+
+
+@media (max-width: 768px){
+
+    .nav__links{
+        display: none;
+    }
+
+    .btn__menu {
+        display: block;
+    }
+
+    .home__header{
+        margin-top: 56px;
+    }
+
+    .film{
+        width: 50%;
+        align-items: center;
+    }
+
+}
+
+
+@media (max-width: 550px){
+
+    .nav__logo--img{
+        height: 80px;
+        width: 80px;
+    }
+
+    .nav__logo--name{
+        font-size: 28px;
+    }
+
+    .header__title{
+        font-size: 26px;
+    }
+
+    .header__sub-title{
+        font-size: 18px;
+    }
+
+    .browse__movies{
+        max-width: 450px;
+    }
+
+    .header__search--title{
+        font-size: 30px;
+        color: white;
+    }
+
+    .fa-magnifying-glass{
+        font-size: 28px;
+    }
+
+    .search__row{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .search-results{
+        margin-bottom: 12px;
+    }
+
+    .film{
+        width: 100%;
+        align-items: center;
+    }
+
+}
