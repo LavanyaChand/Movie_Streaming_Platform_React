@@ -88,6 +88,7 @@ const Search = () => {
     <>
       <Navbar />
       <section id="search__header">
+        
         <div className="browse__movies">
           <h2 className="header__search--title">Browse our movies</h2>
           <form className="input-wrapper" onSubmit={(e) => e.preventDefault()}>

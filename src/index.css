@@ -311,7 +311,8 @@ nav{
   width: 100%;
   /* z-index: 0; */
   padding-top: 128px;
-}
+ }
+
 
 
 .browse__movies {
@@ -805,6 +806,10 @@ select {
         display: flex;
         align-items: center;
     }
+
+    #search__header {
+    background-position: top center;
+  }
 
     .header__title{
         text-align: center;
