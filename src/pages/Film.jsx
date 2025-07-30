@@ -30,23 +30,25 @@ const Film = () => {
 
 
   return (
-    <div className="player">
-        <Link to={`/search/${id}`}>
-            <img src={back_arrow_icon} alt=""/>
-        </Link>
+  <div className="player">
+    <Link to={`/search/${id}`}>
+      <img src={back_arrow_icon} alt="Back" />
+    </Link>
+
+    <div className="video__wrapper">
       <iframe
-        width="90%"
-        height="90%"
         src={`https://www.youtube.com/embed/${apiData.key}`}
         title="Trailer"
-        frameborder="0"
         allowFullScreen
       ></iframe>
-      <div className="player-info">
-        <p>{apiData.type}</p>
-      </div>
     </div>
-  )
+
+    <div className="player-info">
+      <p>{apiData.type}</p>
+    </div>
+  </div>
+);
+
 }
 
 export default Film;

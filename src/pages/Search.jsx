@@ -12,7 +12,8 @@ const Search = () => {
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(true);
 
-  const enforceMinDelay = (startTime, minDuration = 600) => {
+  //Enforcing some delay in loading
+  const enforceMinDelay = (startTime, minDuration = 800) => {
     const elapsed = Date.now() - startTime;
     const remaining = Math.max(0, minDuration - elapsed);
     return new Promise(resolve => setTimeout(resolve, remaining));
@@ -112,7 +113,7 @@ const Search = () => {
                 <h2 className="search-results">Search Results:</h2>
                 <select id="filter" defaultValue="" onChange={filterFilms}>
                   <option value="" disabled>Sort by</option>
-                  <option value="Newest">Newest</option>
+                  <option value="Newest">Latest</option>
                   <option value="Oldest">Oldest</option>
                 </select>
               </div>

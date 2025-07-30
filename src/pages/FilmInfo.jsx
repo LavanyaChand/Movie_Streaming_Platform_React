@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import back_arrow from '../assets/back_arrow_icon.png'
 import play_icon from '../assets/play_icon.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const FilmInfo = () => {
   const { id } = useParams();
@@ -28,7 +29,7 @@ const FilmInfo = () => {
     fetchFilmDetails();
   }, [id]);
 
-  if (!film) return <div className="loading">Loading...</div>;
+  if (!film) return <div className="loading"><FontAwesomeIcon icon="fa-solid fa-spinner"  /></div>;
 
   return (
     <div className="film-info-page">
@@ -59,17 +60,14 @@ const FilmInfo = () => {
               <strong>Genres:</strong>{" "}
               {film.genres.map((g) => g.name).join(", ")}
             </p>
-            <p className="film-overview">
-              <strong>Summary:</strong> {film.overview}
-            </p>
+            <div className="film-overview">
+              <strong>Summary:</strong>
+              <p>{film.overview}</p>
+            </div>
             <Link to={`/film/${id}`} className="play-btn">
-              <img src={play_icon} alt="Play Icon" />
-              Watch Movie
+              <img src={play_icon} alt="Play Icon"/><span>Watch Movie</span>
             </Link>
           </div>
-          {/* <Link to="/film" className='btn'>
-              <img src={play_icon} alt="" />Play
-            </Link> */}
         </div>
       </div>
     </div>
