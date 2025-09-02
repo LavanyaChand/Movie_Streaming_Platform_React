@@ -1,13 +1,13 @@
-# Binge Buddy — Movie Streaming (Trailers) Platform
+# :movie_camera: Binge Buddy - Movie Streaming (Trailers) Platform
 
 Binge Buddy is a React + Vite web app where you can explore movies, view details, and watch official trailers or clips.
 
 Powered by **The Movie Database (TMDB) API**.
 
-## 🚀Live Demo
+## :rocket: Live Demo
 https://movie-streaming-platform-react.vercel.app/
 
-## ✨ Features
+## :sparkles: Features
 
 - Browse popular and trending movies
 - Search for any movie by title
@@ -15,15 +15,16 @@ https://movie-streaming-platform-react.vercel.app/
 - Movie details page with synopsis, ratings, genres, and trailer/clip playback
 - Responsive UI
 
-ℹ️ **Note: Due to copyright and TMDB content policies, only official trailers/teasers/clips are playable—not full movies.**
+>[!NOTE] 
+>Due to copyright and TMDB content policies, only official trailers/teasers/clips are playable—not full movies.
 
-## 🧰 Tech Stack
+## :card_file_box: Tech Stack
 
 - Frontend: React, Vite
 - Styling: Standard CSS
 - API: TMDB (REST)
 
-## 🖥️ Run Locally
+## :computer: Run Locally
 
 **1. Clone repo:**
 
@@ -41,7 +42,7 @@ or
 
 > npx vite
 
-## 🙌 Acknowledgements
+## :raised_hands: Acknowledgements
 
 - Movie data courtesy of TMDB
 - This product uses the TMDB API but is not endorsed or certified by TMDB.
