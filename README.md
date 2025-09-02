@@ -1,12 +1,47 @@
-# React + Vite
+# Binge Buddy — Movie Streaming (Trailers) Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Binge Buddy is a React + Vite web app where you can explore movies, view details, and watch official trailers or clips.
 
-Currently, two official plugins are available:
+Powered by **The Movie Database (TMDB) API**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀Live Demo
+https://movie-streaming-platform-react.vercel.app/
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Browse popular and trending movies
+- Search for any movie by title
+- Sort results (Newest → Oldest, Oldest → Newest)
+- Movie details page with synopsis, ratings, genres, and trailer/clip playback
+- Responsive UI
+
+ℹ️ **Note: Due to copyright and TMDB content policies, only official trailers/teasers/clips are playable—not full movies.**
+
+## 🧰 Tech Stack
+
+- Frontend: React, Vite
+- Styling: Standard CSS
+- API: TMDB (REST)
+
+## 🖥️ Run Locally
+
+**1. Clone repo:**
+
+> git clone https://github.com/yourUserName/Movie_Streaming_Platform_React.git
+
+**2. Install dependencies:**
+
+> npm install
+
+**3. Run development server:**
+
+> npm run dev
+
+or
+
+> npx vite
+
+## 🙌 Acknowledgements
+
+- Movie data courtesy of TMDB
+- This product uses the TMDB API but is not endorsed or certified by TMDB.
